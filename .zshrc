@@ -125,5 +125,5 @@ source $ZSH/oh-my-zsh.sh
 #eval "$(pyenv init --path)"
 #eval "$(pyenv virtualenv-init -)"
 
-alias dotfiles=/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME
+alias dotfiles=/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
 
