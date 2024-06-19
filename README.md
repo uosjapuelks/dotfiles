@@ -22,3 +22,16 @@ or
 ```
 stow --adopt .
 ```
+
+## Using tmux
+
+```
+tmux new -s <SessionName>
+```
+
+```
+tmux ls
+tmux attach <SessionName>
+tmux a
+tmux detach
+```
