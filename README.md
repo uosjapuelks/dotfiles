@@ -8,7 +8,10 @@ Git and Stow
 
 ## Installing
 
-`brew install stow git`
+```
+brew install stow git
+git submodule update --init --recursive
+```
 
 ## Notes
 
@@ -23,6 +26,7 @@ or
 stow --adopt .
 ```
 
+
 ## Using tmux
 
 ```
@@ -35,3 +39,6 @@ tmux attach <SessionName>
 tmux a
 tmux detach
 ```
+
+Click PREFIX-I to install tmux plugins
+
