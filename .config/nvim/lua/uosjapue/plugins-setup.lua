@@ -73,6 +73,28 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
 	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
+  -- cpp debugger stuff
+  use("mfussenegger/nvim-dap") -- for cpp debugger
+  -- use("jay-babu/mason-nvim-dap.nvim") -- for cpp debugger
+  use({
+    "jay-babu/mason-nvim-dap.nvim",
+    requires = {
+      { "williamboman/mason.nvim" },
+      { "mfussenegger/nvim-dap" }
+    }
+  })
+  use({
+    "rcarriga/nvim-dap-ui",
+    requires = {
+      { "mfussenegger/nvim-dap" },
+      { "nvim-neotest/nvim-nio" },
+      { "rcarriga/nvim-notify" }
+    },
+  })
+
+  -- configuring folding
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion

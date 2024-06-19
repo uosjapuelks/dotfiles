@@ -16,6 +16,11 @@ if not mason_null_ls_status then
 	return
 end
 
+-- import mason-null-ls plugin safely
+local mason_nvim_dap_status, mason_nvim_dap = pcall(require, "mason-nvim-dap")
+if not mason_nvim_dap_status then
+	return
+end
 -- enable mason
 mason.setup()
 
@@ -37,11 +42,17 @@ mason_lspconfig.setup({
 mason_null_ls.setup({
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
-		"clang-format",
+		"clang-format", -- clang formatter
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
+})
+
+mason_nvim_dap.setup({
+  ensure_installed = {
+    "codelldb",
+  }
 })

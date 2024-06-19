@@ -47,6 +47,14 @@ end
 
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
+-- Option 2: nvim lsp as LSP client
+-- Tell the server the capability of foldingRange,
+-- Neovim hasn't added foldingRange to default capabilities, users must add it manually
+-- local foldingCapabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
@@ -91,9 +99,9 @@ lspconfig["emmet_ls"].setup({
 
 -- configure clangd language server
 lspconfig["clangd"].setup({
-	capabilities = capabilities,
+	capabilities = cmp_nvim_lsp.default_capabilities(),
 	on_attach = on_attach,
-	filetypes = { "cpp", "c", "cc", "hpp", "h" },
+	filetypes = { "cpp", "c", "cc", "hpp", "h", "objc", "cuda", "proto", "objcpp" },
 })
 
 -- configure lua server (with special settings)
@@ -116,3 +124,4 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+

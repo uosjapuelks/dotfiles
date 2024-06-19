@@ -17,3 +17,6 @@ require("uosjapue.plugins.lsp.null-ls")
 require("uosjapue.plugins.autopairs")
 require("uosjapue.plugins.treesitter")
 require("uosjapue.plugins.gitsigns")
+
+require("uosjapue.plugins.nvim-dap")
+require("uosjapue.plugins.nvim-ufo")
