@@ -20,3 +20,5 @@ require("uosjapue.plugins.gitsigns")
 
 require("uosjapue.plugins.nvim-dap")
 require("uosjapue.plugins.nvim-ufo")
+
+require("uosjapue.plugins.hologram")

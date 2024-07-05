@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/Users/anderson/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["hologram.nvim"] = {
+    loaded = true,
+    path = "/Users/anderson/.local/share/nvim/site/pack/packer/start/hologram.nvim",
+    url = "https://github.com/edluffy/hologram.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/Users/anderson/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",

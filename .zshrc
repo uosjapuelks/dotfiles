@@ -1,9 +1,3 @@
-export CXXFLAGS="-I/opt/homebrew/Cellar/boost/1.85.0/include"
-
-export CMAKE_TOOLCHAIN_FILE="$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake"
-export CMAKE_PREFIX_PATH="/opt/homebrew/opt/libpq/"
-export DEVICE_KEY=7q4B1tXSwPc0BbMwDXUEdtTa1Qh4uCuhDDv+iRY/PPOv+yagv8TvEVMUP3UT6zzQdSr1fo1a218yahrmWEWhHRdZUdFOtLKh53juxoKybkEBDA4tSWaNpxz3eot+TSNmCppAGHETyHlsF4a47Uj8qZ8j5FwbDx1sGoky903K008=
-
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
