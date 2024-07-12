@@ -7,6 +7,7 @@ require("uosjapue.plugins.comment")
 require("uosjapue.plugins.nvim-tree")
 require("uosjapue.plugins.telescope")
 require("uosjapue.plugins.lualine")
+require("uosjapue.plugins.lazygit")
 
 require("uosjapue.plugins.nvim-cmp")
 require("uosjapue.plugins.lsp.mason")

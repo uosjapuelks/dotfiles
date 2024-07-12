@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/anderson/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/anderson/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/anderson/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
