@@ -27,6 +27,7 @@ mason.setup()
 mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
+    "gopls",
 		"clangd",
 		"tsserver",
 		"html",
@@ -46,6 +47,9 @@ mason_null_ls.setup({
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
+    "gofumpt",
+    "goimports_reviser",
+    "golines",
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
@@ -54,5 +58,7 @@ mason_null_ls.setup({
 mason_nvim_dap.setup({
   ensure_installed = {
     "codelldb",
+    "delve",
+    "python",
   }
 })

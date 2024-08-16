@@ -95,6 +95,11 @@ return packer.startup(function(use)
   -- configuring folding
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
+  -- Golang
+  -- use {'ray-x/go.nvim', requires = 'ray-x/guihua/lua'}
+  use("ray-x/go.nvim")
+  use("ray-x/guihua.lua")
+
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion

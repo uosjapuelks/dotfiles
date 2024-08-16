@@ -104,6 +104,15 @@ lspconfig["clangd"].setup({
 	filetypes = { "cpp", "c", "cc", "hpp", "h", "objc", "cuda", "proto", "objcpp" },
 })
 
+-- configure clangd language server
+lspconfig["gopls"].setup({
+	capabilities = cmp_nvim_lsp.default_capabilities(),
+	on_attach = on_attach,
+	filetypes = {"go", "gomod", "gowork", "gotmpl"},
+  --not sure to include
+  -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+})
+
 -- configure lua server (with special settings)
 lspconfig["lua_ls"].setup({
 	capabilities = capabilities,
