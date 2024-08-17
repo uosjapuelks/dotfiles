@@ -15,6 +15,9 @@ local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 null_ls.setup({
 	-- setup formatters & linters
 	sources = {
+    formatting.gofumpt,
+    formatting.goimports_reviser,
+    formatting.golines,
 		--  to disable file types use
 		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
