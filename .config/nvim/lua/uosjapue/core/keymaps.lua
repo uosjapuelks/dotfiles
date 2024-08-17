@@ -50,6 +50,7 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
+-- Debugger Keybinds
 keymap.set("n", "<leader>dc", "<cmd>DapContinue<cr>")
 keymap.set("n", "<leader>dn", "<cmd>DapStepOver<cr>")
 keymap.set("n", "<leader>di", "<cmd>DapStepInto<cr>")
@@ -58,3 +59,6 @@ keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<cr>") -- Add breakpoint 
 keymap.set("n", "<leader>dr", "<cmd>DapContinue<cr>") -- Start or Continue debugger
 keymap.set("n", "<leader>dt", "<cmd>DapTerminate<cr>") -- Terminate debugger
 
+-- Gopher
+keymap.set("n", "<leader>gj", "<cmd>GoTagAdd json<cr>")
+keymap.set("n", "<leader>gy", "<cmd>GoTagAdd yaml<cr>")

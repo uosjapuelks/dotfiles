@@ -95,10 +95,29 @@ return packer.startup(function(use)
   -- configuring folding
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
-  -- Golang
-  -- use {'ray-x/go.nvim', requires = 'ray-x/guihua/lua'}
+  -- Golang Support
   use("ray-x/go.nvim")
   use("ray-x/guihua.lua")
+  -- TODO: gopher setup
+  use({"olexsmir/gopher.nvim",
+    ft = "go",
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"},
+      {"mfussenegger/nvim-dap"},
+    },
+    -- build = function ()
+    --   vim.cmd.GoInstallDeps()
+    -- end,
+    -- ---@type gopher.Config
+    -- opts={}
+    config = function (_, opts)
+      require("gopher").setup(opts)
+    end,
+    build = function ()
+      vim.cmd.GoInstallDeps()
+    end,
+  })
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
@@ -136,7 +155,7 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-  use({ 
+  use({
     "kdheepak/lazygit.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
