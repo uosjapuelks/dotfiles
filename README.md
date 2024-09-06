@@ -1,6 +1,6 @@
 # Personal Dotfile Configurations
 
-This projects uses stow
+This dotfiles folder uses stow
 
 ## Dependencies
 
