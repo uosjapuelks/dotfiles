@@ -1,4 +1,4 @@
-local status, _ = pcall(vim.cmd, "colorscheme kanagawa-dragon")
+local status, _ = pcall(vim.cmd, "colorscheme kanagawa-wave")
 if not status then
   print("colorscheme not found")
   return

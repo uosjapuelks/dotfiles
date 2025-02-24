@@ -1,5 +1,10 @@
 #! /bin/sh
 
+# Use zsh
+# export SHELL="/bin/zsh"
+# exec -l /bin/zsh
+# source ~/.zshrc
+
 # Ubuntu
 sudo apt install zsh
 
@@ -23,6 +28,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-
 # Install zsh autosuggest and syntax highlighting
 # sudo apt install
 
-# Older version install neovim find online
+# Older version install neovim latest find online
 # Might need to also install fzf or ripgrep or node
+# sudo apt install ripgrep node fzf
 #
