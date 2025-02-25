@@ -1,0 +1,36 @@
+# This is the configuration file for Ghostty.
+#   /Users/anderson/Library/Application Support/com.mitchellh.ghostty/config
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+background-opacity = 0.95
+background-blur-radius = 10
+
+window-padding-balance = true 
+window-save-state = always
+macos-titlebar-style=transparent
+window-colorspace = "display-p3"
+
+background = 1C2021
+font-family = MesloLGS Nerd Font Mono
+mouse-hide-while-typing = true
+# macos-titlebar-style = hidden
+
+# theme = Kanagawa Dragon
+theme = dark:Dracula, light:GruvboxLight
+
+copy-on-select = clipboard
+
+# Keybinds
+config-file = ~/.config/ghostty/keybinds
