@@ -8,3 +8,6 @@ wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/do
 
 sudo apt install ripgrep fzf fd-find
 sudo apt install gcc clang
+
+# Ubuntu24 swap caps and ctrl
+# gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"

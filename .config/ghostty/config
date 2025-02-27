@@ -19,20 +19,19 @@ background-blur-radius = 10
 
 window-padding-balance = true 
 window-save-state = always
-macos-titlebar-style=transparent
+# macos-titlebar-style=transparent
 window-colorspace = "display-p3"
 
-background = 1C2021
 font-family = MesloLGS Nerd Font Mono
 mouse-hide-while-typing = true
 window-theme = system
 # macos-titlebar-style = hidden
 
 # theme = Kanagawa Dragon
-theme = dark:GruvboxDark, light:GruvboxLight
+# theme = dark:GruvboxDark, light:GruvboxLight
 # theme = GruvboxDark
+theme = GruvboxLight
 
 copy-on-select = clipboard
-
 # Keybinds
 config-file = ~/.config/ghostty/keybinds
