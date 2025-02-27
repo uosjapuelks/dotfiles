@@ -25,10 +25,12 @@ window-colorspace = "display-p3"
 background = 1C2021
 font-family = MesloLGS Nerd Font Mono
 mouse-hide-while-typing = true
+window-theme = system
 # macos-titlebar-style = hidden
 
 # theme = Kanagawa Dragon
-theme = dark:Dracula, light:GruvboxLight
+theme = dark:GruvboxDark, light:GruvboxLight
+# theme = GruvboxDark
 
 copy-on-select = clipboard
 
