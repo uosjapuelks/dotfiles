@@ -1,40 +1,53 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-  config = function()
-    -- import mason
-    local mason = require("mason")
+	"williamboman/mason.nvim",
+	dependencies = {
+		"williamboman/mason-lspconfig.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+	},
+	config = function()
+		-- import mason
+		local mason = require("mason")
 
-    -- import mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
+		-- import mason-lspconfig
+		local mason_lspconfig = require("mason-lspconfig")
 
-    local mason_tool_installer = require("mason-tool-installer")
+		local mason_tool_installer = require("mason-tool-installer")
 
-    -- enable mason and configure icons
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
+		-- enable mason and configure icons
+		mason.setup({
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
 
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
-      ensure_installed = {
-        "lua_ls",
-      },
-    })
+		mason_tool_installer.setup({
+			ensure_installed = {
+				-- LSPs
+				"clangd",
+				"lua_ls",
+				"pyright",
+				"ruff",
 
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "stylua", -- lua formatter
-      },
-    })
-  end,
+				-- DAP
+				-- "codelldb",
+				-- "cpptools",
+
+				-- Linter
+				"cpplint",
+
+				-- Formatters
+				"stylua", -- lua formatter
+				"prettier",
+			},
+
+			auto_update = false,
+			run_on_start = true,
+			start_delay = 3000, -- 3 second delay
+			debounce_hours = 5, -- at least 5 hours between attempts to install/update
+		})
+	end,
 }
