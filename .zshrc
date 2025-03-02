@@ -22,4 +22,5 @@ eval "$(oh-my-posh --init --shell zsh --config $HOME/.cache/oh-my-posh/themes/wh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# antigen bundle zsh-users/zsh-autosuggestions
+
+source /opt/ros/jazzy/setup.zsh

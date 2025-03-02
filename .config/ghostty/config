@@ -29,8 +29,8 @@ window-theme = system
 
 # theme = Kanagawa Dragon
 # theme = dark:GruvboxDark, light:GruvboxLight
-# theme = GruvboxDark
-theme = GruvboxLight
+theme = GruvboxDark
+# theme = GruvboxLight
 
 copy-on-select = clipboard
 # Keybinds
