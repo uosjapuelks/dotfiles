@@ -124,6 +124,9 @@ sudo apt install gcc clang
 
 # Ubuntu24 swap caps and ctrl
 # gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+#
+# Ubuntu24 RESET SWAP
+# gsettings reset org.gnome.desktop.input-sources xkb-options
 
 # Install zsh
 echo "\n========================================"
