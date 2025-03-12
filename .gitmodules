@@ -10,3 +10,18 @@
 [submodule ".zsh/zsh-completions"]
 	path = .zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
+[submodule ".tmux/plugins/tmux-continuum"]
+	path = .tmux/plugins/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule ".tmux/plugins/vim-tmux-navigator"]
+	path = .tmux/plugins/vim-tmux-navigator
+	url = https://git::@github.com/christoomey/vim-tmux-navigator
+[submodule ".tmux/plugins/tmux-tokyo-night"]
+	path = .tmux/plugins/tmux-tokyo-night
+	url = https://git::@github.com/fabioluciano/tmux-tokyo-night
+[submodule ".tmux/plugins/tmux-themepack"]
+	path = .tmux/plugins/tmux-themepack
+	url = https://git::@github.com/jimeh/tmux-themepack
