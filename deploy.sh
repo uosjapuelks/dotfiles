@@ -1,8 +1,10 @@
 #!/bin/bash
-set -eux
+set -ex
+# set -u
 set -o pipefail
 
 # Default values
+ARCH=$(uname -m)
 NEOVIM_VERSION=v0.10.0
 NEOVIM_PATH=~/open_source/neovim/
 NODEJS_VERSION=18.18.2
@@ -63,15 +65,20 @@ sudo apt-get install -y clang \
     ripgrep \
     wget \
     tar \
-    unzip
+    unzip \
+    stow
 
 pip3 install black debugpy ruff
 
 # This is needed to get pyright working
 echo "========================================"
 echo "Configuring nodejs"
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash \
-  && bash -c ". ${HOME}/.nvm/nvm.sh && nvm install v${NODEJS_VERSION} && nvm use ${NODEJS_VERSION}"
+if [[ $ARCH=="aarch64" ]]; then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+else
+  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+fi
+bash -c ". ${HOME}/.nvm/nvm.sh && nvm install v${NODEJS_VERSION} && nvm use ${NODEJS_VERSION}"
 
 echo "========================================"
 echo "Installing lazygit"
@@ -79,22 +86,25 @@ LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/re
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
 tar xf lazygit.tar.gz lazygit
 sudo install lazygit /usr/local/bin
+rm lazygit lazygit.tar.gz
 
 echo "========================================"
 #
 echo "Installing neovim"
-REPOSITORY_URL="https://github.com/neovim/neovim"
-if ! (git ls-remote --heads "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "${NEOVIM_VERSION}" || \
-      git ls-remote --tags "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "refs/tags/${NEOVIM_VERSION}"); then
-    echo "Branch or tag '${NEOVIM_VERSION}' does not exist in the remote repository."
-fi
-git clone "${REPOSITORY_URL}" "${NEOVIM_PATH}" -b "${NEOVIM_VERSION}"
+if [[ -z "( ls -A ${NEOVIM_VERSION} )" ]];then
+  REPOSITORY_URL="https://github.com/neovim/neovim"
+  if ! (git ls-remote --heads "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "${NEOVIM_VERSION}" || \
+        git ls-remote --tags "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "refs/tags/${NEOVIM_VERSION}"); then
+      echo "Branch or tag '${NEOVIM_VERSION}' does not exist in the remote repository."
+  fi
+  git clone "${REPOSITORY_URL}" "${NEOVIM_PATH}" -b "${NEOVIM_VERSION}"
 
-(
-  cd "${NEOVIM_PATH}" || exit 1
-  make CMAKE_BUILD_TYE=RelWithDebInfo
-  sudo make install
-)
+  (
+    cd "${NEOVIM_PATH}" || exit 1
+    make CMAKE_BUILD_TYE=RelWithDebInfo
+    sudo make install
+  )
+fi
 
 echo "========================================"
 echo "Configuring Neovim"
@@ -133,7 +143,7 @@ echo "\n========================================"
 echo "Installing Zsh and Oh My Posh! (Meslo)"
 echo "========================================"
 sudo apt install zsh
-chsh zsh
+# chsh zsh
 
 # Install Oh My Posh
 if [[ "$OSTYPE" == "darwin"* ]]; then
