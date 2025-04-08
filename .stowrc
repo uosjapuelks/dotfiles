@@ -1,0 +1,4 @@
+--ignore .stowrc
+--ignore scripts/*
+--ignore .gitmodules
+--ignore .git/*
