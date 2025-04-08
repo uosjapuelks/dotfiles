@@ -143,7 +143,9 @@ echo "\n========================================"
 echo "Installing Zsh and Oh My Posh! (Meslo)"
 echo "========================================"
 sudo apt install zsh
-# chsh zsh
+mv ~/.zshrc ~/.zshrc.bak
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+rm -f ~/.zshrc
 
 # Install Oh My Posh
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -151,6 +153,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
+
+cd ~/dotfiles; stow --adopt .
 
 echo "\n========================================"
 echo "All done! Enjoy!"

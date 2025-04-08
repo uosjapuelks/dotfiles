@@ -22,13 +22,4 @@ fc-cache -fv
 
 # Install Oh My ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# Install PowerLevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
-# Install zsh autosuggest and syntax highlighting
-# sudo apt install
-
-# Older version install neovim latest find online
-# Might need to also install fzf or ripgrep or node
-# sudo apt install ripgrep node fzf
-#
