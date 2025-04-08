@@ -91,7 +91,7 @@ rm lazygit lazygit.tar.gz
 echo "========================================"
 #
 echo "Installing neovim"
-if [[ -z "( ls -A ${NEOVIM_VERSION} )" ]];then
+if [[ -z "( ls -A ${NEOVIM_PATH} )" ]];then
   REPOSITORY_URL="https://github.com/neovim/neovim"
   if ! (git ls-remote --heads "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "${NEOVIM_VERSION}" || \
         git ls-remote --tags "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "refs/tags/${NEOVIM_VERSION}"); then
@@ -143,10 +143,6 @@ echo "\n========================================"
 echo "Installing Zsh and Oh My Posh! (Meslo)"
 echo "========================================"
 sudo apt install zsh
-mv ~/.zshrc ~/.zshrc.bak
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-rm -f ~/.zshrc
-
 # Install Oh My Posh
 if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install jandedobbeleer/oh-my-posh/oh-my-posh
@@ -154,9 +150,4 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
-cd ~/dotfiles; stow --adopt .
-
-echo "\n========================================"
-echo "All done! Enjoy!"
-echo "========================================"
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
