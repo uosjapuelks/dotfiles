@@ -18,9 +18,19 @@ alias ga="git add"
 alias gcm="git commit -m"
 
 export PATH=$PATH:$HOME/.local/bin
-eval "$(oh-my-posh --init --shell zsh --config $HOME/.cache/oh-my-posh/themes/wholespace.omp.json)"
+if [ "$OSTYPE" != "darwin22.0" ]; then
+  eval "$(oh-my-posh --init --shell zsh --config $HOME/.cache/oh-my-posh/themes/wholespace.omp.json)"
+else
+  eval "$(oh-my-posh --init --shell zsh --config $(brew --prefix oh-my-posh)/themes/clean-detailed.omp.json)"
+fi
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source /opt/ros/jazzy/setup.zsh
+# Ubuntu24 swap caps and ctrl
+# gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
+#
+# Ubuntu24 RESET SWAP
+# gsettings reset org.gnome.desktop.input-sources xkb-options
+#
+# source /opt/ros/jazzy/setup.zsh
