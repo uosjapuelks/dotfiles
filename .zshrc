@@ -17,12 +17,17 @@ alias gs="git status"
 alias ga="git add"
 alias gcm="git commit -m"
 
-export PATH=$PATH:$HOME/.local/bin
-if [ "$OSTYPE" != "darwin22.0" ]; then
-  eval "$(oh-my-posh --init --shell zsh --config $HOME/.cache/oh-my-posh/themes/wholespace.omp.json)"
-else
-  eval "$(oh-my-posh --init --shell zsh --config $(brew --prefix oh-my-posh)/themes/clean-detailed.omp.json)"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export POSH_DIR="$(brew --prefix oh-my-posh)"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export POSH_DIR="$HOME/.cache/oh-my-posh"
 fi
+
+export POSH_THEME="wholespace"
+# export THEME="tokyo"
+
+export PATH=$PATH:$HOME/.local/bin
+eval "$(oh-my-posh --init --shell zsh --config $POSH_DIR/themes/$POSH_THEME.omp.json)"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

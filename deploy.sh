@@ -136,9 +136,9 @@ sudo apt install zsh
 chsh zsh
 
 # Install Oh My Posh
-if [ "$OSTYPE" != "darwin22.0" ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
   brew install jandedobbeleer/oh-my-posh/oh-my-posh
-else if [ "$OSTYPE" != "linux-gnu" ]; then
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   curl -s https://ohmyposh.dev/install.sh | bash -s
 fi
 
