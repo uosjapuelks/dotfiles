@@ -91,7 +91,7 @@ rm lazygit lazygit.tar.gz
 echo "========================================"
 #
 echo "Installing neovim"
-if [[ -z "( ls -A ${NEOVIM_PATH} )" ]];then
+if [[ -d "${NEOVIM_PATH}" ]];then
   REPOSITORY_URL="https://github.com/neovim/neovim"
   if ! (git ls-remote --heads "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "${NEOVIM_VERSION}" || \
         git ls-remote --tags "${REPOSITORY_URL}" "${NEOVIM_VERSION}" | grep -q "refs/tags/${NEOVIM_VERSION}"); then
