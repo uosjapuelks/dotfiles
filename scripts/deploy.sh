@@ -6,7 +6,7 @@ set -o pipefail
 # Default values
 ARCH=$(uname -m)
 NEOVIM_VERSION=v0.10.0
-NEOVIM_PATH=~/open_source/neovim/
+NEOVIM_PATH=/dev_tools/neovim/
 NODEJS_VERSION=18.18.2
 while [[ "${1}" ]]; do
   case "${1}" in
@@ -130,7 +130,7 @@ wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/do
 && fc-cache -fv
 
 sudo apt install ripgrep fzf fd-find
-sudo apt install gcc clang
+sudo apt install gcc clangd
 
 # Ubuntu24 swap caps and ctrl
 # gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
