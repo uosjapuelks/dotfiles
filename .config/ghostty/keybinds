@@ -1,21 +1,21 @@
 # keybindings
-keybind = alt+s>r=reload_config
-keybind = alt+s>x=close_surface
+keybind = super+s>r=reload_config
+keybind = super+s>x=close_surface
 
-keybind = alt+s>n=new_window
-keybind = alt+s>c=new_tab
-keybind = alt+s>shift+l=next_tab
-keybind = alt+s>shift+h=previous_tab
-keybind = alt+s>comma=move_tab:-1
-keybind = alt+s>period=move_tab:1
+keybind = super+s>n=new_window
+keybind = super+s>c=new_tab
+keybind = super+s>shift+l=next_tab
+keybind = super+s>shift+h=previous_tab
+keybind = super+s>comma=move_tab:-1
+keybind = super+s>period=move_tab:1
 
 # split
-keybind = alt+s>\=new_split:right
-keybind = alt+s>-=new_split:down
-keybind = alt+s>j=goto_split:bottom
-keybind = alt+s>k=goto_split:top
-keybind = alt+s>h=goto_split:left
-keybind = alt+s>l=goto_split:right
+keybind = super+s>\=new_split:right
+keybind = super+s>-=new_split:down
+keybind = super+s>j=goto_split:bottom
+keybind = super+s>k=goto_split:top
+keybind = super+s>h=goto_split:left
+keybind = super+s>l=goto_split:right
 
-keybind = alt+s>e=equalize_splits
+keybind = super+s>e=equalize_splits
 

@@ -13,25 +13,25 @@
 # # separated by equals signs.
 # font-family = Iosevka
 # window-padding-x = 2
-#
-background-opacity = 0.95
-background-blur-radius = 10
 
-window-padding-balance = true 
-window-save-state = always
-# macos-titlebar-style=transparent
-window-colorspace = "display-p3"
+term = xterm-256color
 
-font-family = MesloLGS Nerd Font Mono
-mouse-hide-while-typing = true
-window-theme = system
-# macos-titlebar-style = hidden
+background-opacity =       0.9
+# background-blur-radius = 10
 
-# theme = Kanagawa Dragon
-# theme = dark:GruvboxDark, light:GruvboxLight
-theme = GruvboxDark
+theme = dark:GruvboxDark, light:GruvboxLight
+# theme = GruvboxDark
 # theme = GruvboxLight
 
 copy-on-select = clipboard
+window-padding-balance = true 
+window-save-state = always
+window-colorspace = "display-p3"
+font-family = MesloLGS Nerd Font Mono
+mouse-hide-while-typing = true
+window-theme = system
+
 # Keybinds
-config-file = ~/.config/ghostty/keybinds
+config-file = ?keybinds
+config-file = ?mac_keybinds
+config-file = ?ubuntu_keybinds

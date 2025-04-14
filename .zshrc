@@ -3,13 +3,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -100,6 +93,7 @@ alias v="nvim"
 alias gs="git status"
 alias ga="git add"
 alias gcm="git commit -m"
+alias clr="clear"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export POSH_DIR="$(brew --prefix oh-my-posh)"
@@ -107,11 +101,14 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export POSH_DIR="$HOME/.cache/oh-my-posh"
 fi
 
-export POSH_THEME="wholespace"
+# POSH_THEME="wholespace"
+MY_THEME="${HOME}/dotfiles/myposh.omp.json"
 # export THEME="tokyo"
 
 export PATH=$PATH:$HOME/.local/bin
-eval "$(oh-my-posh --init --shell zsh --config $POSH_DIR/themes/$POSH_THEME.omp.json)"
+# eval "$(oh-my-posh --init --shell zsh --config $POSH_DIR/themes/$POSH_THEME.omp.json)"
+eval "$(oh-my-posh --init --shell zsh --config ${MY_THEME})"
+echo ${MY_THEME}
 
 # Ubuntu24 swap caps and ctrl
 # gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
