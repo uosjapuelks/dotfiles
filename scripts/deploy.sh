@@ -6,7 +6,7 @@ set -o pipefail
 # Default values
 ARCH=$(uname -m)
 NEOVIM_VERSION=v0.10.0
-NEOVIM_PATH=/dev_tools/neovim/
+NEOVIM_PATH=~/dev_tools/neovim/
 NODEJS_VERSION=18.18.2
 while [[ "${1}" ]]; do
   case "${1}" in
@@ -108,7 +108,6 @@ fi
 
 echo "========================================"
 echo "Configuring Neovim"
-cp -r .config ~/.config
 
 nvim --headless "+Lazy! sync" +qa
 

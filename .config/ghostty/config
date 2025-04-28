@@ -15,6 +15,7 @@
 # window-padding-x = 2
 
 term = xterm-256color
+command = /usr/bin/zsh --login --interactive
 
 background-opacity =       0.9
 # background-blur-radius = 10
