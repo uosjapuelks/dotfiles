@@ -17,6 +17,7 @@ return {
 					end
 				end,
 				yaml = { "prettier" },
+				xml = { "prettier" },
 				[""] = { "injected" },
 			},
 			ignore_errors = true,
@@ -27,7 +28,7 @@ return {
 				python = "py",
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_fallback = false,
 				async = false,
 				timeout_ms = 1000,
 			},

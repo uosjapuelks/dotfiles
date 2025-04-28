@@ -9,6 +9,8 @@ return {
 		lualine.setup({
 			options = {
 				icons_enabled = true,
+				component_separators = "",
+				section_separators = { left = "", right = "" },
 				-- theme = my_lualine_theme,
 				-- theme = "gruvbox_light",
 				-- theme = "gruvbox_dark",

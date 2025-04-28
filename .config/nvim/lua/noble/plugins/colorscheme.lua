@@ -11,6 +11,8 @@ return {
 			vim.cmd([[colorscheme gruvbox]])
 			-- vim.o.background = "light"
 			vim.o.background = "dark"
+			vim.api.nvim_set_hl(0, "StatusLine", { reverse = false })
+			vim.api.nvim_set_hl(0, "StatusLineNC", { reverse = false })
 		end,
 	},
 }
