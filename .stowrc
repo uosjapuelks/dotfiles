@@ -2,3 +2,4 @@
 --ignore scripts/*
 --ignore .gitmodules
 --ignore .git/*
+--ignore .json

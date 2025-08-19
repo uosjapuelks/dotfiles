@@ -1,6 +1,6 @@
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 
 # If you come from bash you might have to change your $PATH.
@@ -93,7 +93,11 @@ alias v="nvim"
 alias gs="git status"
 alias ga="git add"
 alias gcm="git commit -m"
-alias clr="clear"
+alias c="clear"
+
+alias cpugetavail='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_available_governors'
+alias cpushowcurrent='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+alias cpusethigh='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export POSH_DIR="$(brew --prefix oh-my-posh)"
@@ -108,7 +112,7 @@ MY_THEME="${HOME}/dotfiles/myposh.omp.json"
 export PATH=$PATH:$HOME/.local/bin
 # eval "$(oh-my-posh --init --shell zsh --config $POSH_DIR/themes/$POSH_THEME.omp.json)"
 eval "$(oh-my-posh --init --shell zsh --config ${MY_THEME})"
-echo ${MY_THEME}
+# echo ${MY_THEME}
 
 # Ubuntu24 swap caps and ctrl
 # gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:swapcaps']"
@@ -116,4 +120,23 @@ echo ${MY_THEME}
 # Ubuntu24 RESET SWAP
 # gsettings reset org.gnome.desktop.input-sources xkb-options
 #
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=$PATH:/home/nds/tools/Qt5.14.2/5.14.2/gcc_64/bin
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH$:/home/nds/tools/Qt5.14.2/5.14.2/gcc_64/lib
+
 # source /opt/ros/jazzy/setup.zsh
+# source /opt/ros/noetic/setup.zsh
+# source ~/dev/catkin_ws/devel/setup.zsh
+# source /opt/ros/foxy/setup.zsh
+alias ross="source ~/dev/catkin_ws/devel/setup.zsh"
+alias ross2="source /opt/ros/foxy/setup.zsh"
+
+alias rossremote="export ROS_MASTER_URI=http://192.168.0.150:11311; export ROS_IP=192.168.0.102"
+alias rosslocal="export ROS_MASTER_URI=http://localhost:11311; unset ROS_IP"
+# export ROS_MASTER_URI=http://192.168.0.150:11311
+# export ROS_IP=192.168.0.102
+# export ROS_MASTER_URI=http://localhost:11311
+# unset ROS_IP

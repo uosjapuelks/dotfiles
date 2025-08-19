@@ -17,11 +17,12 @@
 term = xterm-256color
 command = /usr/bin/zsh --login --interactive
 
-background-opacity =       0.9
+# background-opacity =       0.8
+background-opacity =       0.8
 # background-blur-radius = 10
 
-theme = dark:GruvboxDark, light:GruvboxLight
-# theme = GruvboxDark
+# theme = dark:GruvboxDark, light:GruvboxLight
+theme = GruvboxDark
 # theme = GruvboxLight
 
 copy-on-select = clipboard
