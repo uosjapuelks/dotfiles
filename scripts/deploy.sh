@@ -5,7 +5,7 @@ set -o pipefail
 
 # Default values
 ARCH=$(uname -m)
-NEOVIM_VERSION=v0.10.0
+NEOVIM_VERSION=v0.11.0
 NEOVIM_PATH=~/dev_tools/neovim/
 NODEJS_VERSION=18.18.2
 while [[ "${1}" ]]; do
