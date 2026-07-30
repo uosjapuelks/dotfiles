@@ -1,5 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
+	-- pinned to v1: v2+ targets nvim 0.11's vim.lsp.config and warns on 0.10
+	version = "^1.0.0",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",

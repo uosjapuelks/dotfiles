@@ -1,7 +1,10 @@
 return {
 	"williamboman/mason.nvim",
+	-- pinned to v1: mason/mason-lspconfig v2 require nvim 0.11+ and dropped
+	-- `setup_handlers()`, which lsp/lspconfig.lua relies on
+	version = "^1.0.0",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		{ "williamboman/mason-lspconfig.nvim", version = "^1.0.0" },
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
